@@ -15,7 +15,7 @@ Platform | API
  HTML JavaScript | [DataSourceWizardExtensionOptions.canCreateNewJsonDataSource](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Designer.DataSourceWizardExtensionOptions#js_DevExpress_Dashboard_Designer_DataSourceWizardExtensionOptions_canCreateNewJsonDataSource)
  ASP.NET Core | [DataSourceWizardOptionBuilder.CanCreateNewJsonDataSource(Boolean)](https://docs.devexpress.com/Dashboard/DevExpress.DashboardAspNetCore.DataSourceWizardOptionBuilder.CanCreateNewJsonDataSource(System.Boolean))
  MVC | [DashboardExtensionSettings.CanCreateNewJsonDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.Mvc.DashboardExtensionSettings.CanCreateNewJsonDataSource) 
- Web Forms | [ASPxDashboard.CanCreateNewJsonDataSource](http://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.ASPxDashboard.CanCreateNewJsonDataSource) 
+ Web Forms | [ASPxDashboard.CanCreateNewJsonDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.ASPxDashboard.CanCreateNewJsonDataSource) 
 
 After that, the "Choose Connection (JSON)" page allows end users to create new data connections:
 
