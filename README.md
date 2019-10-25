@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+* [Startup.cs](./CS/AspNetCoreDashboard2.2/Startup.cs)
+* [Index.cshtml](./CS/AspNetCoreDashboard2.2/Pages/Index.cshtml)
+<!-- default file list end -->
+
 # How to create new JSON data sources at runtime
 
 You can provide end users with the capability to create a new data connection for a [JSON Data Source](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardJsonDataSource) at runtime.
