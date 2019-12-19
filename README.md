@@ -8,14 +8,14 @@
 
 You can provide end users with the capability to create a new data connection for a [JSON Data Source](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardJsonDataSource) at runtime.
 
-To enable the capability for end users, set the **canCreateNewJsonDataSource** property to **true**:
+To enable the capability for end users, set the **allowCreateNewJsonConnection** property to **true**:
 
 Platform | API
 -----|------
- HTML JavaScript | [DataSourceWizardExtensionOptions.canCreateNewJsonDataSource](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Designer.DataSourceWizardExtensionOptions#js_DevExpress_Dashboard_Designer_DataSourceWizardExtensionOptions_canCreateNewJsonDataSource)
- ASP.NET Core | [DataSourceWizardOptionBuilder.CanCreateNewJsonDataSource(Boolean)](https://docs.devexpress.com/Dashboard/DevExpress.DashboardAspNetCore.DataSourceWizardOptionBuilder.CanCreateNewJsonDataSource(System.Boolean))
- MVC | [DashboardExtensionSettings.CanCreateNewJsonDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.Mvc.DashboardExtensionSettings.CanCreateNewJsonDataSource) 
- Web Forms | [ASPxDashboard.CanCreateNewJsonDataSource](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.ASPxDashboard.CanCreateNewJsonDataSource) 
+ HTML JavaScript | [DataSourceWizardExtensionOptions.allowCreateNewJsonConnection](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Designer.DataSourceWizardExtensionOptions#js_DevExpress_Dashboard_Designer_DataSourceWizardExtensionOptions_allowCreateNewJsonConnection)
+ ASP.NET Core | [DataSourceWizardOptionBuilder.AllowCreateNewJsonConnection(Boolean)](https://docs.devexpress.com/Dashboard/DevExpress.DashboardAspNetCore.DataSourceWizardOptionBuilder.AllowCreateNewJsonConnection(System.Boolean))
+ MVC | [DashboardExtensionSettings.AllowCreateNewJsonConnection](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.Mvc.DashboardExtensionSettings.AllowCreateNewJsonConnection) 
+ Web Forms | [ASPxDashboard.AllowCreateNewJsonConnection](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.ASPxDashboard.AllowCreateNewJsonConnection) 
 
 After that, the "Choose Connection (JSON)" page allows end users to create new data connections:
 
