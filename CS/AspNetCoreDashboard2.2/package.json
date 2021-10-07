@@ -1,11 +1,11 @@
 {
-    "name": "aspnetcore2",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "devextreme": "19.2.2-beta",
-        "@devexpress/analytics-core": "19.2.2-beta",
-        "devexpress-dashboard": "19.2.2-beta",
-        "jquery-ui-dist": "^1.12.1"
-    }
+  "name": "aspnetcore2",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "devextreme": "21.2-stable",
+    "@devexpress/analytics-core": "21.2-stable",
+    "devexpress-dashboard": "21.2-stable",
+    "jquery-ui-dist": "^1.12.1"
+  }
 }

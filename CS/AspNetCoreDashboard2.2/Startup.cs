@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DevExpress.AspNetCore;
@@ -28,48 +29,52 @@ namespace AspNetCoreDashboard2 {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services
-                .AddMvc()
-                .AddDefaultDashboardController((configurator, serviceProvider)  => {
-                    // Use the ConnectionStringProvider class to allow end users to use only connections created at runtime.
-                    //configurator.SetConnectionStringsProvider(new ConnectionStringProvider());
+                .AddMvc();
 
-                    // Use the ConnectionStringProviderEx class to allow end users to use connections created at runtime in addition to predefined connection strings.
-                    configurator.SetConnectionStringsProvider(new ConnectionStringsProviderEx(new DashboardConnectionStringsProvider(Configuration)));                    
+            services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvider) => {
+                DashboardConfigurator configurator = new DashboardConfigurator();
+                // Use the ConnectionStringProvider class to allow end users to use only connections created at runtime.
+                //configurator.SetConnectionStringsProvider(new ConnectionStringProvider());
 
-                    DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(FileProvider.GetFileInfo("Data/Dashboards").PhysicalPath);
-                    configurator.SetDashboardStorage(dashboardFileStorage);
+                // Use the ConnectionStringProviderEx class to allow end users to use connections created at runtime in addition to predefined connection strings.
+                configurator.SetConnectionStringsProvider(new ConnectionStringsProviderEx(new DashboardConnectionStringsProvider(Configuration)));
 
-                    DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
+                DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(FileProvider.GetFileInfo("Data/Dashboards").PhysicalPath);
+                configurator.SetDashboardStorage(dashboardFileStorage);
 
-                    // Registers an SQL data source.
-                    DashboardSqlDataSource sqlDataSource = new DashboardSqlDataSource("SQL Data Source", "nwindConnectionString");
-                    sqlDataSource.DataProcessingMode = DataProcessingMode.Client;
-                    SelectQuery query = SelectQueryFluentBuilder
-                        .AddTable("Categories")
-                        .Join("Products", "CategoryID")
-                        .SelectAllColumns()
-                        .Build("Products_Categories");
-                    sqlDataSource.Queries.Add(query);
-                    dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml());
+                DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
 
-                    // Registers an Object data source.
-                    DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("Object Data Source");
-                    dataSourceStorage.RegisterDataSource("objDataSource", objDataSource.SaveToXml());
+                // Registers an SQL data source.
+                DashboardSqlDataSource sqlDataSource = new DashboardSqlDataSource("SQL Data Source", "nwindConnectionString");
+                sqlDataSource.DataProcessingMode = DataProcessingMode.Client;
+                SelectQuery query = SelectQueryFluentBuilder
+                    .AddTable("Categories")
+                    .Join("Products", "CategoryID")
+                    .SelectAllColumns()
+                    .Build("Products_Categories");
+                sqlDataSource.Queries.Add(query);
+                dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml());
 
-                    // Registers an Excel data source.
-                    DashboardExcelDataSource excelDataSource = new DashboardExcelDataSource("Excel Data Source");
-                    excelDataSource.FileName = FileProvider.GetFileInfo("Data/Sales.xlsx").PhysicalPath;
-                    excelDataSource.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Sheet1"));
-                    dataSourceStorage.RegisterDataSource("excelDataSource", excelDataSource.SaveToXml());
+                // Registers an Object data source.
+                DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("Object Data Source");
+                dataSourceStorage.RegisterDataSource("objDataSource", objDataSource.SaveToXml());
 
-                    configurator.SetDataSourceStorage(dataSourceStorage);
+                // Registers an Excel data source.
+                DashboardExcelDataSource excelDataSource = new DashboardExcelDataSource("Excel Data Source");
+                excelDataSource.FileName = FileProvider.GetFileInfo("Data/Sales.xlsx").PhysicalPath;
+                excelDataSource.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Sheet1"));
+                dataSourceStorage.RegisterDataSource("excelDataSource", excelDataSource.SaveToXml());
 
-                    configurator.DataLoading += (s, e) => {
-                        if(e.DataSourceName == "Object Data Source") {
-                            e.Data = Invoices.CreateData();
-                        }
-                    };
-                });
+                configurator.SetDataSourceStorage(dataSourceStorage);
+
+                configurator.DataLoading += (s, e) => {
+                    if (e.DataSourceName == "Object Data Source")
+                    {
+                        e.Data = Invoices.CreateData();
+                    }
+                };
+                return configurator;
+            });
 
             services.AddDevExpressControls();
         }
@@ -84,7 +89,7 @@ namespace AspNetCoreDashboard2 {
             }
             app.UseStaticFiles();
             app.UseMvc(routes => {
-                routes.MapDashboardRoute();
+                routes.MapDashboardRoute("api/dashboard", "DefaultDashboard");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
