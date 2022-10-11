@@ -8,12 +8,6 @@
 
 You can provide end users with the capability to create a new data connection for a [JSON Data Source](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardJsonDataSource) at runtime.
 
-<!-- default file list -->
-## Files to Look At
-* [Startup.cs](./CS/AspNetCoreDashboard2.2/Startup.cs)
-* [Index.cshtml](./CS/AspNetCoreDashboard2.2/Pages/Index.cshtml)
-<!-- default file list end -->
-
 To enable the capability for end users, set the **allowCreateNewJsonConnection** property to **true**:
 
 Platform | API
@@ -29,6 +23,12 @@ After that, the "Choose Connection (JSON)" page allows end users to create new d
 
 On the server side, implement the [IDataSourceWizardConnectionStringsStorage](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.IDataSourceWizardConnectionStringsStorage) interface to provide an end user with the capability to save the created JSON data connections. Use the created class instance as the [ASPxDashboard.SetConnectionStringsProvider](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.ASPxDashboard.SetConnectionStringsProvider(DevExpress.DashboardWeb.IDataSourceWizardConnectionStringsStorage)) / [DashboardConfigurator.SetConnectionStringsProvider](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.DashboardConfigurator.SetConnectionStringsProvider(DevExpress.DashboardWeb.IDataSourceWizardConnectionStringsStorage)) method's parameter.
 
+## Files to Review
+
+* [Startup.cs](./CS/AspNetCoreDashboard2.2/Startup.cs)
+* [Index.cshtml](./CS/AspNetCoreDashboard2.2/Pages/Index.cshtml)
+
 ## Documentation
+
 - [Dashboard Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/)
 - [Customize the Dashboard Data Source Wizard](https://docs.devexpress.com/Dashboard/401330/)
