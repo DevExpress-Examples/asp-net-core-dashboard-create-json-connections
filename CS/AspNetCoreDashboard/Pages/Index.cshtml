@@ -1,0 +1,12 @@
+@page
+
+<div style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+@(Html.DevExpress().Dashboard("dashboardControl1")
+	.Width("100%")
+	.Height("100%")
+	.UseNeutralFilterMode(true)
+	.ControllerName("DefaultDashboard")
+	.OnBeforeRender("onBeforeRender")
+	.Extensions(x=>x.DataSourceWizard(y=>y.AllowCreateNewJsonConnection(true)))
+)
+</div>
