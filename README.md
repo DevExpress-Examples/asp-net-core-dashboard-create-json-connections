@@ -25,8 +25,8 @@ On the server side, implement the [IDataSourceWizardConnectionStringsStorage](ht
 
 ## Files to Review
 
-* [Startup.cs](./CS/AspNetCoreDashboard2.2/Startup.cs)
-* [Index.cshtml](./CS/AspNetCoreDashboard2.2/Pages/Index.cshtml)
+* [Startup.cs](./CS/AspNetCoreDashboard/Startup.cs)
+* [Index.cshtml](./CS/AspNetCoreDashboard/Pages/Index.cshtml)
 
 ## Documentation
 
