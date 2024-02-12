@@ -33,8 +33,9 @@ You can use our test JSON files to try this approach: [DataSources](https://gith
 
 ## Files to Review
 
-* [Startup.cs](./CS/AspNetCoreDashboard/Startup.cs)
-* [Index.cshtml](./CS/AspNetCoreDashboard/Pages/Index.cshtml)
+* [Program.cs](./CS/SaveJsonConnectionTutorial/Program.cs)
+* [DashboardUtils.cs](./CS/SaveJsonConnectionTutorial/Code/DashboardUtils.cs)
+* [Index.cshtml](./CS/SaveJsonConnectionTutorial/Pages/Index.cshtml)
 
 ## Documentation
 
