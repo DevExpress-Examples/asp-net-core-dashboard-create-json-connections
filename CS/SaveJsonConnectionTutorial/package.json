@@ -1,0 +1,10 @@
+{
+  "name": "savejsonconnectiontutorial",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "devextreme-dist": "23.2.4",
+    "@devexpress/analytics-core": "23.2.4",
+    "devexpress-dashboard": "23.2.4"
+  }
+}

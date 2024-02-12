@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Sample Dashboard" />
+  <DataSources>
+    <JsonDataSource Name="JSON Data Source" ConnectionName="cusomersConnectionString" RootElement="Customers" ComponentName="jsonDataSource2">
+      <Schema>
+        <Node Name="root" Selected="false" NodeType="Object">
+          <Node Name="Customers" Selected="true" NodeType="Array">
+            <Node Name="Address" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="City" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="CompanyName" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="ContactName" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="ContactTitle" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Country" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Fax" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Id" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Phone" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="PostalCode" Type="System.String" Selected="true" NodeType="Property" />
+            <Node Name="Region" Type="System.String" Selected="true" NodeType="Property" />
+          </Node>
+        </Node>
+      </Schema>
+    </JsonDataSource>
+  </DataSources>
+  <Items>
+    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Combo Box 1" ShowCaption="false" DataSource="jsonDataSource2">
+      <DataItems>
+        <Dimension DataMember="Country" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" ShowCaption="false" DataSource="jsonDataSource2">
+      <DataItems>
+        <Dimension DataMember="ContactName" DefaultId="DataItem0" />
+        <Dimension DataMember="CompanyName" DefaultId="DataItem1" />
+        <Dimension DataMember="Address" DefaultId="DataItem2" />
+        <Dimension DataMember="Country" DefaultId="DataItem3" />
+        <Dimension DataMember="Phone" DefaultId="DataItem4" />
+        <Dimension DataMember="City" DefaultId="DataItem5" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+      <ColumnFilterOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutGroup Orientation="Vertical" Weight="290.24952749708746">
+        <LayoutItem DashboardItem="comboBoxDashboardItem1" Weight="290.24952749708746" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="290.24952749708746" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
