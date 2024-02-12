@@ -77,7 +77,7 @@ namespace AspNetCoreDashboard {
             app.UseEndpoints(endpoints => {
                 endpoints.MapRazorPages();
                 // Maps the dashboard route.
-                EndpointRouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboards", "DefaultDashboard");
+                RouteBuilderExtension.MapDashboardRoute(endpoints, "api/dashboards", "DefaultDashboard");
             });
         }
     }

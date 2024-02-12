@@ -2,8 +2,7 @@
 <Dashboard>
   <Title Text="Sample Dashboard" />
   <DataSources>
-    <SqlDataSource ComponentName="DataSource1" DataProcessingMode="Client">
-      <Name>SalesPerson</Name>
+    <SqlDataSource Name="SalesPerson" ComponentName="DataSource1" DataProcessingMode="Client">
       <Connection Name="NWindConnectionString" FromAppConfig="true" />
       <Query Type="SelectQuery" Name="SalesPerson">
         <Tables>
@@ -50,7 +49,7 @@
   </Items>
   <LayoutTree>
     <LayoutGroup Weight="100">
-      <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="34.589299171062549" />
+      <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="34.58929917106255" />
       <LayoutItem DashboardItem="chartDashboardItem1" Weight="165.41070082893745" />
     </LayoutGroup>
   </LayoutTree>
