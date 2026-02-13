@@ -43,7 +43,7 @@ You can use our test JSON files to try this approach: [DataSources](https://gith
 - [Dashboard Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/)
 - [Customize the Dashboard Data Source Wizard](https://docs.devexpress.com/Dashboard/401330/)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-core-dashboard-create-json-connections&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-core-dashboard-create-json-connections&~~~was_helpful=no)
 
