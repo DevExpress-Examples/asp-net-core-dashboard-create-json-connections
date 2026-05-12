@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SaveJsonConnectionTutorial": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:2112;http://localhost:2113"
+    }
+  }
+}
